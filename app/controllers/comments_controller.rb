@@ -7,4 +7,8 @@ class CommentsController < ApplicationController
     ];
     render :json => data
   end
+
+  def create
+    render :json => {author: params[:author].upcase, text: params[:text].downcase}
+  end
 end

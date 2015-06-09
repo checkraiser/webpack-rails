@@ -51571,6 +51571,13 @@
 	      .end(function(err, res){
 	        CommentBoxStore.set('comments', res.body);
 	      });
+	  },
+	  addComment: function(comment){
+	    request.post('/api/comments')
+	      .end(function(err, res){
+	        var commentsCursor = CommentBoxStore.select('comments');
+	        commentsCursor.push(res.body);
+	      })
 	  }
 	}
 
@@ -54778,11 +54785,27 @@
 
 	var React = __webpack_require__(1);
 
+	var CommentBoxActions = __webpack_require__(195);
+
 	var CommentForm = React.createClass({displayName: "CommentForm",
+	  handleSubmit: function(e) {
+	    e.preventDefault();
+	    var author = React.findDOMNode(this.refs.author).value.trim();
+	    var text = React.findDOMNode(this.refs.text).value.trim();
+	    if (!text || !author) {
+	      return;
+	    }
+	    CommentBoxActions.addComment({author: author, text: text});
+	    React.findDOMNode(this.refs.author).value = '';
+	    React.findDOMNode(this.refs.text).value = '';
+	    return;
+	  },
 	  render: function() {
 	    return (
-	      React.createElement("div", {className: "commentForm"}, 
-	        "Hello, world! I am a CommentForm."
+	      React.createElement("form", {className: "commentForm", onSubmit: this.handleSubmit}, 
+	        React.createElement("input", {type: "text", placeholder: "Your name", ref: "author"}), 
+	        React.createElement("input", {type: "text", placeholder: "Say something...", ref: "text"}), 
+	        React.createElement("input", {type: "submit", value: "Post"})
 	      )
 	    );
 	  }

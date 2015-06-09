@@ -14,5 +14,12 @@ module.exports = {
       .end(function(err, res){
         CommentBoxStore.set('comments', res.body);
       });
+  },
+  addComment: function(comment){
+    request.post('/api/comments')
+      .end(function(err, res){
+        var commentsCursor = CommentBoxStore.select('comments');
+        commentsCursor.push(res.body);
+      })
   }
 }

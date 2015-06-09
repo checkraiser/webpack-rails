@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #   end
   root 'todos#index'
   get '/api/comments' => 'comments#index'
+  post '/api/comments' => 'comments#create'
 end
