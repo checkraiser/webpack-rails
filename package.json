@@ -1,0 +1,31 @@
+{
+  "name": "webpackrails",
+  "version": "1.0.0",
+  "description": "== README",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.3.16",
+    "baobab": "^1.1.0",
+    "baobab-react": "^0.1.1",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.3",
+    "emmett": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-webpack": "^1.5.0",
+    "json": "^9.0.3",
+    "jsx-loader": "^0.13.2",
+    "marked": "^0.3.3",
+    "node-libs-browser": "^0.5.2",
+    "react": "^0.13.3",
+    "superagent": "^1.2.0",
+    "webpack": "^1.9.10"
+  }
+}
