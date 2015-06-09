@@ -1,12 +1,12 @@
 var path = require('path'),
 assets_path = path.join('client');
-
+dst_path = path.join('app', 'assets', 'javascripts');
 var config = {
   context: path.resolve(assets_path),
   entry: 'entry.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(assets_path)
+    path: path.resolve(dst_path)
   },
   externals: {
     jquery: 'var jQuery'
