@@ -51560,19 +51560,17 @@
 	var request = __webpack_require__(196);
 
 	var CommentBoxStore = __webpack_require__(161);
-	var contentCursor = CommentBoxStore.select("content");
-	var commentCursor = CommentBoxStore.select("comments");
+
 	module.exports = {
 	  changeContent: function(content){
 	    contentCursor.set('content', content);
 	  },
 	  fetch: function(){
-	    contentCursor.set('content', "Hello World 3");
+	    CommentBoxStore.set('content', "Hello World 3");
 	    request.get('/api/comments')
-	            .end(function(err, res){
-	              console.log(res.body);
-	              commentCursor.set('comments', res.body);
-	            });
+	      .end(function(err, res){
+	        CommentBoxStore.set('comments', res.body);
+	      });
 	  }
 	}
 
