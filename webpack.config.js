@@ -4,7 +4,7 @@ dst_path = path.join('app', 'assets', 'javascripts');
 var config = {
   context: path.resolve(assets_path),
   entry: {
-    CommentEntry: 'comment-entry.js'
+    CommentEntry: 'entries/comment-entry.js'
   },
   output: {
     filename: '[name].js',

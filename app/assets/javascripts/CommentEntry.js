@@ -20435,7 +20435,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var RootComponent = __webpack_require__(158);
+	var RootCommentComponent = __webpack_require__(158);
 	var tree = __webpack_require__(176);
 	var events = __webpack_require__(174);
 	var CommentBoxActions = __webpack_require__(199);
@@ -20445,7 +20445,7 @@
 	    events.on('fetch', CommentBoxActions.fetch);
 	    events.on('changeContent', CommentBoxActions.changeContent);
 	    events.on('addComment', CommentBoxActions.addComment);
-	    React.render(React.createElement(RootComponent, {tree: tree}), elem);
+	    React.render(React.createElement(RootCommentComponent, {tree: tree}), elem);
 	  };
 
 
@@ -20460,7 +20460,7 @@
 	var CommentBox = __webpack_require__(173);
 
 
-	var RootComponent = React.createClass({displayName: "RootComponent",
+	var RootCommentComponent = React.createClass({displayName: "RootCommentComponent",
 	  mixins: [mixin],
 	  render: function() {
 	    return (
@@ -20471,7 +20471,7 @@
 	  }
 	});
 
-	module.exports = RootComponent;
+	module.exports = RootCommentComponent;
 
 
 /***/ },

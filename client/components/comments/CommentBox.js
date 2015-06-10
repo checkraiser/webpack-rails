@@ -1,9 +1,9 @@
 'use strict';
 
 var React = require('react');
-var CommentBoxStore = require('../stores/CommentBoxStore');
+var CommentBoxStore = require('../../stores/CommentBoxStore');
 var mixin = require('baobab-react/mixins').branch;
-var events = require('../utils/events');
+var events = require('../../utils/events');
 var CommentList = require('./CommentList');
 var CommentForm = require('./CommentForm');
 

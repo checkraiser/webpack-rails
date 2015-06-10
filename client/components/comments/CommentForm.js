@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var events = require('../utils/events');
+var events = require('../../utils/events');
 
 var CommentForm = React.createClass({
   handleSubmit: function(e) {

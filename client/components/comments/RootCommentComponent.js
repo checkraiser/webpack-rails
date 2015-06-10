@@ -5,7 +5,7 @@ var mixin = require('baobab-react/mixins').root;
 var CommentBox = require('./CommentBox');
 
 
-var RootComponent = React.createClass({
+var RootCommentComponent = React.createClass({
   mixins: [mixin],
   render: function() {
     return (
@@ -16,4 +16,4 @@ var RootComponent = React.createClass({
   }
 });
 
-module.exports = RootComponent;
+module.exports = RootCommentComponent;
