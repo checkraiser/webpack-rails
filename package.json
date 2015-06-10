@@ -25,6 +25,7 @@
     "marked": "^0.3.3",
     "node-libs-browser": "^0.5.2",
     "react": "^0.13.3",
+    "react-router": "^0.13.3",
     "superagent": "^1.2.0",
     "webpack": "^1.9.10"
   }

@@ -17,8 +17,9 @@ module.exports = {
       });
   },
   addComment: function(comment){
+    console.log(comment.data);
     request.post('/api/comments')
-      .send({author: comment.data.author, text: comment.data.text})
+      .send(comment.data)
       .end(function(err, res){
         var commentsCursor = CommentBoxStore.select('comments');
         commentsCursor.push(res.body);

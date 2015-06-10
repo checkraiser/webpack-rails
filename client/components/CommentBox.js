@@ -13,10 +13,16 @@ var CommentBox = React.createClass({
   cursors:{
     content: ['content'],
     comments: ['comments']
-  } ,
+  },
+  getDefaultProps: function(){
+    return {
+      pollInterval: 2000
+    }
+  },
   componentDidMount: function(){
     //CommentBoxActions.fetch();
     events.emit('fetch', null);
+    //setInterval(function(){ events.emit('fetch', null); }, this.props.pollInterval);
   },
   handleChange: function(event){
     //CommentBoxActions.changeContent(event.target.value);

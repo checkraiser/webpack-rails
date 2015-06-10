@@ -3,9 +3,11 @@ assets_path = path.join('client');
 dst_path = path.join('app', 'assets', 'javascripts');
 var config = {
   context: path.resolve(assets_path),
-  entry: 'entry.js',
+  entry: {
+    CommentEntry: 'comment-entry.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(dst_path)
   },
   externals: {
