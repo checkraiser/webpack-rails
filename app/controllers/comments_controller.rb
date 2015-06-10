@@ -9,6 +9,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    render :json => {author: params[:author].upcase, text: params[:text].downcase}
+    render :json => {author: comment_params[:author].upcase, text: comment_params[:text].downcase}
+  end
+  private
+  def comment_params
+    params[:comment]
   end
 end

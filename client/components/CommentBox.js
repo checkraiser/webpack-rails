@@ -2,7 +2,6 @@
 
 var React = require('react');
 var CommentBoxStore = require('../stores/CommentBoxStore');
-var CommentBoxActions = require('../actions/CommentBoxActions');
 var mixin = require('baobab-react/mixins').branch;
 var events = require('../utils/events');
 var CommentList = require('./CommentList');
@@ -16,10 +15,12 @@ var CommentBox = React.createClass({
     comments: ['comments']
   } ,
   componentDidMount: function(){
-    CommentBoxActions.fetch();
+    //CommentBoxActions.fetch();
+    events.emit('fetch', null);
   },
   handleChange: function(event){
-    CommentBoxActions.changeContent(event.target.value);
+    //CommentBoxActions.changeContent(event.target.value);
+    events.emit('changeContent', event.target.value);
   },
   render: function() {
     return (

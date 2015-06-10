@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var CommentBoxActions = require('../actions/CommentBoxActions');
+var events = require('../utils/events');
 
 var CommentForm = React.createClass({
   handleSubmit: function(e) {
@@ -12,7 +12,8 @@ var CommentForm = React.createClass({
     if (!text || !author) {
       return;
     }
-    CommentBoxActions.addComment({author: author, text: text});
+    //CommentBoxActions.addComment({author: author, text: text});
+    events.emit('addComment', {author: author, text: text});
     React.findDOMNode(this.refs.author).value = '';
     React.findDOMNode(this.refs.text).value = '';
     return;
